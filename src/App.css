@@ -1,0 +1,7 @@
+@import "tailwindcss";
+*{
+  font-family: Bebas Neue;
+}
+.disabled {
+        pointer-events: none;
+    }
