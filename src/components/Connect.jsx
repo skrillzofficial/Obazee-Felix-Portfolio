@@ -129,10 +129,10 @@ const Connect = () => {
             <div className="space-y-3">
               <div className="flex items-start">
                 <div className="flex justify-center items-center gap-2">
-                  <h3 className="md:text-lg">Say hello at</h3>
+                  <h3 className="md:text-lg font">Say hello at</h3>
                   <a
                     href="mailto:Obazeefelixadetayo@gmail.com"
-                    className="border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
+                    className="border font border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
                   >
                     Obazeefelixadetayo@gmail.com
                   </a>
@@ -140,11 +140,11 @@ const Connect = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="flex justify-center items-center space-x-1.5">
+                <div className="flex justify-center font items-center space-x-1.5">
                   <h3 className="md:text-lg">For more info, here's my</h3>
                   <a
                     href="#"
-                    className="border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
+                    className="border font border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
                   >
                     resume
                   </a>
@@ -190,7 +190,7 @@ const Connect = () => {
           <div className="w-full lg:w-3/5">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block mb-2">
+                <label htmlFor="name" className="block font mb-2">
                   Name
                 </label>
                 <input
@@ -209,7 +209,7 @@ const Connect = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2">
+                <label htmlFor="email" className="block font mb-2">
                   Email
                 </label>
                 <input
@@ -228,7 +228,7 @@ const Connect = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block mb-2">
+                <label htmlFor="subject" className="block font mb-2">
                   Subject
                 </label>
                 <input
@@ -247,7 +247,7 @@ const Connect = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-2">
+                <label htmlFor="message" className="block font mb-2">
                   Message
                 </label>
                 <textarea
@@ -267,13 +267,13 @@ const Connect = () => {
 
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <div className="p-3 bg-green-900/30 border border-green-800 rounded-lg text-green-300">
+                <div className="p-3 bg-green-900/30 border font border-green-800 rounded-lg text-green-300">
                   Message sent successfully! I'll get back to you soon.
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="p-3 bg-red-900/30 border border-red-800 rounded-lg text-red-300">
+                <div className="p-3 bg-red-900/30 border border-red-800 font rounded-lg text-red-300">
                   Sorry, there was an error sending your message. Please try
                   again or email me directly.
                 </div>

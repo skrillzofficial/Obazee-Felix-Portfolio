@@ -17,14 +17,14 @@ const AboutPage = () => {
           {/* Right side*/}
           <div className="w-full md:w-2/3">
             <div className="space-y-6">
-              <p className="text-lg text-white leading-relaxed">
+              <p className="text-lg font leading-relaxed">
                 I'm a full-stack developer from Lagos, Nigeria, who loves the
                 entire journey of creation. I thrive on turning concepts into
                 reality, architecting robust APIs on the back-end and building
                 engaging, responsive experiences on the front-end.
               </p>
 
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg font leading-relaxed">
                 My journey into tech is unconventional. My academic background
                 is in Animal Genetics and Breeding, a field deeply rooted in
                 data analysis, pattern recognition, and systematic
@@ -89,53 +89,53 @@ const AboutPage = () => {
 
           {/* Right side */}
           <div className="w-full md:w-2/3">
-            <p className="text-lg mb-8">
+            <p className="text-lg font mb-8">
               I am a dedicated learner, constantly seeking to expand my skill set and tackle new challenges. I am committed to staying at the forefront of industry trends to deliver innovative solutions.
             </p>
 
             {/* Skills grid with icons */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {/* HTML */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white ">HTML</span>
               </div>
 
               {/* CSS */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className="font-bold text-white">CSS</span>
               </div>
 
               {/* JavaScript */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className="font-bold text-white">
                   JavaScript
                 </span>
               </div>
 
               {/* React */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font  justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white">React</span>
               </div>
 
               {/* Tailwind Css*/}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white">Tailwind Css</span>
               </div>
 
               {/* Jquery */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white">Jquery</span>
               </div>
 
               {/* Accessibility */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white">
                   Accessibility
                 </span>
               </div>
 
               {/* Figma */}
-              <div className="flex items-center justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
                 <span className=" font-bold text-white">
                   Figma
                 </span>

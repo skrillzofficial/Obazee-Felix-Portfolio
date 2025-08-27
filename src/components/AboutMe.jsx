@@ -23,7 +23,7 @@ const AboutMe = () => {
                 engaging, responsive experiences on the front-end.
               </p>
 
-              <p className="text-xl hidden md:block leading-relaxed">
+              <p className="text-xl font hidden md:block leading-relaxed">
                 My journey into tech is unconventional. My academic background
                 is in Animal Genetics and Breeding, a field deeply rooted in
                 data analysis, pattern recognition, and systematic

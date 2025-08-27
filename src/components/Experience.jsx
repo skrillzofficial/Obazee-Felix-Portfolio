@@ -17,11 +17,11 @@ const Experience = () => {
           </div>
           <div className="md:w-1/2 md:pl-12">
             <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-              <h3 className="text-2xl font-bold">Fullstack Web Developer</h3>
-              <p className="font-medium">2025 - Present</p>
+              <h3 className="text-2xl font font-bold">Fullstack Web Developer</h3>
+              <p className="font-medium font">2025 - Present</p>
             </div>
-            <p className=" text-[#D3E97A] mb-3">TechStudio Academy, Lagos</p>
-            <p className="mb-4">
+            <p className=" text-[#D3E97A] font mb-3">TechStudio Academy, Lagos</p>
+            <p className="mb-4 font">
               Developed full-stack applications for various clients, focusing on
               scalable solutions and user experience. Contributed to both
               frontend and backend development.
@@ -36,13 +36,13 @@ const Experience = () => {
           </div>
           <div className="md:w-1/2 md:pl-12">
             <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font font-bold">
                 Junior Front-end Developer
               </h3>
-              <p className=" font-medium">2019 - 2019</p>
+              <p className=" font-medium font">2019 - 2019</p>
             </div>
-            <p className="mb-3 text-[#D3E97A]">Innox Tech Nigeria, Ibadan</p>
-            <p className="mb-4">
+            <p className="mb-3 text-[#D3E97A] font">Innox Tech Nigeria, Ibadan</p>
+            <p className="mb-4 font">
               Started my professional journey building landing page websites for
               various clients. Gained foundational knowledge in web technologies
               and best practices.
