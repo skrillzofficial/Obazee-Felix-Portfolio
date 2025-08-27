@@ -39,7 +39,7 @@ const AboutPage = () => {
               </p>
 
               <div className="flex flex-row items-center justify-start sm:items-center space-x-4 space-y-4 sm:space-y-0 sm:space-x-6">
-                <div className="bg-[#D3E97A] flex items-center px-3 border-2 rounded-full">
+                <div className="bg-[#D3E97A] flex items-center px-3 rounded-full">
                   <button className="text-black text-[8px] font-bold md:text-lg px-3 py-2">
                     DOWNLOAD RESUME
                   </button>

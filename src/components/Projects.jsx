@@ -25,7 +25,7 @@ const Projects = () => {
               <div className="w-full md:w-1/2">
                 <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
                   {/* Conceptual works header */}
-                  <div className="md:mb-5 bg-black border w-40 text-center rounded-full">
+                  <div className="md:mb-5 bg-black w-40 text-center rounded-full">
                     <h3 className="text-lg font">Conceptual works</h3>
                   </div>
 
@@ -157,7 +157,7 @@ const Projects = () => {
               {/* Image container*/}
               <div className="w-full md:w-1/2">
                 <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  <div className="md:mb-5 bg-black border w-30 text-center rounded-full">
+                  <div className="md:mb-5 bg-black w-30 text-center rounded-full">
                     <h3 className="text-lg font">Challenge</h3>
                   </div>
                   <div className="flex justify-center items-center p-4 h-80">

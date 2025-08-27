@@ -47,7 +47,7 @@ const AboutMe = () => {
             {/* image */}
             <div className="md:w-1/2 flex justify-center md:justify-end pt-10">
               <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 md:hidden rounded-lg overflow-hidden border border-[#333]">
+                <div className="w-100% h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 md:hidden rounded-lg overflow-hidden border border-[#333]">
                   {/*My image */}
                   <div className="w-full h-full  flex items-center justify-center">
                     <img src={myimg} alt="" />
