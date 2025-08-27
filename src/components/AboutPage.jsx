@@ -100,9 +100,9 @@ const AboutPage = () => {
             </p>
 
             {/* Skills grid with icons */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2">
+            <div className="flex flex-row flex-wrap justify-start gap-2  md:w-[420px]">
               {/* HTML */}
-              <div className="flex items-center w-fit font justify-center p-2 bg-black rounded-full border border-[#484848]">
+              <div className="flex items-center w-fit font justify-center py-1 px-5 bg-black rounded-full border border-[#484848]">
                 <span className=" text-white ">HTML</span>
               </div>
 
@@ -113,32 +113,32 @@ const AboutPage = () => {
 
               {/* JavaScript */}
               <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                <span className=" text-white">JavaScript</span>
+                <span className=" text-white">JAVASCRIPT</span>
               </div>
 
               {/* React */}
               <div className="flex items-center font w-fit  justify-center p-2 bg-black border-[#484848] rounded-full border">
-                <span className="  text-white">React</span>
+                <span className="  text-white">REACT</span>
               </div>
 
               {/* Tailwind Css*/}
               <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                <span className="  text-white">Tailwind Css</span>
+                <span className="  text-white">TAILWIND CSS</span>
               </div>
 
               {/* Jquery */}
               <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                <span className="  text-white">Jquery</span>
+                <span className="  text-white">JQUERY</span>
               </div>
 
               {/* Accessibility */}
               <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                <span className="  text-white">Accessibility</span>
+                <span className="  text-white">ACCESIBILITY</span>
               </div>
 
               {/* Figma */}
               <div className="flex items-center font w-fit justify-center border-[#484848] p-2 bg-black rounded-full border">
-                <span className="  text-white">Figma</span>
+                <span className="  text-white">FIGMA</span>
               </div>
             </div>
           </div>
