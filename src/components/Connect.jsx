@@ -11,21 +11,72 @@ const Connect = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
+  const [errors, setErrors] = useState({});
+
+  // Email validation pattern
+  const validateEmail = (email) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    // Subject validation
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required";
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate form 
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // EmailJS credentials - you need to complete these
+      // EmailJS 
       const serviceID = "service_tkcteca";
       const templateID = "template_y7q38am";
       const userID = "G9VrsnJ4gKxaJPO20";
@@ -148,9 +199,13 @@ const Connect = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
-                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D3E97A] focus:border-transparent"
+                  className={`w-full bg-gray-900 border ${
+                    errors.name ? "border-red-500" : "border-gray-800"
+                  } rounded-lg px-4 py-3 `}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
               </div>
 
               <div>
@@ -163,9 +218,13 @@ const Connect = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
-                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D3E97A] focus:border-transparent"
+                  className={`w-full bg-gray-900 border ${
+                    errors.email ? "border-red-500" : "border-gray-800"
+                  } rounded-lg px-4 py-3`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -178,9 +237,13 @@ const Connect = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  required
-                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D3E97A] focus:border-transparent"
+                  className={`w-full bg-gray-900 border ${
+                    errors.subject ? "border-red-500" : "border-gray-800"
+                  } rounded-lg px-4 py-3 `}
                 />
+                {errors.subject && (
+                  <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                )}
               </div>
 
               <div>
@@ -193,9 +256,13 @@ const Connect = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  required
-                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D3E97A] focus:border-transparent"
+                  className={`w-full bg-gray-900 border ${
+                    errors.message ? "border-red-500" : "border-gray-800"
+                  } rounded-lg px-4 py-3 `}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
               {/* Status Messages */}
