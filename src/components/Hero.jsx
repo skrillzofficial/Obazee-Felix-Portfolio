@@ -20,7 +20,7 @@ const Hero = () => {
             to life across the entire stack.
           </h3>
           <div className="flex flex-row items-center justify-start sm:items-center space-x-4 space-y-4 sm:space-y-0 sm:space-x-6">
-            <div className="bg-[#D3E97A] flex items-center px-3 border-2 rounded-full">
+            <div className="bg-[#D3E97A] flex items-center px-3 rounded-full">
               <button className="   text-black px-3 py-2 font-medium ">
                 CONTACT ME
               </button>
@@ -30,12 +30,12 @@ const Hero = () => {
 
             <div className="flex space-x-4">
               <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full">
-                <a href="#" className="flex items-center justify-center">
+                <a href="https://tinyurl.com/24fw857w" className="flex items-center justify-center">
                   <img src={linkedin} alt="linkedin logo" className="w-5 h-5" />
                 </a>
               </div>
               <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full">
-                <a href="#" className="flex items-center justify-center">
+                <a href="https://github.com/skrillzofficial" className="flex items-center justify-center">
                   <img src={github} alt="github logo" className="w-5 h-5" />
                 </a>
               </div>

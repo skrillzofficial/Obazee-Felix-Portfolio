@@ -140,8 +140,8 @@ const Connect = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="flex justify-center font items-center space-x-1.5">
-                  <h3 className="md:text-lg">For more info, here's my</h3>
+                <div className="flex justify-center items-center space-x-1.5">
+                  <h3 className="md:text-lg font">For more info, here's my</h3>
                   <a
                     href="#"
                     className="border font border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
@@ -154,28 +154,28 @@ const Connect = () => {
               <div className="pt-1">
                 <div className="flex">
                   <a
-                    href="https://linkedin.com"
+                    href="https://tinyurl.com/24fw857w"
                     target="_blank"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
                   >
                     <Linkedin size={20} />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/skrillzofficial"
                     target="_blank"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
                   >
                     <Github size={20} />
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/skrillzofficial?s=21"
                     target="_blank"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
                   >
                     <X size={20} />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://tinyurl.com/26ecctka"
                     target="_blank"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
                   >

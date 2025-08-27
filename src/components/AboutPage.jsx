@@ -11,7 +11,9 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-16 items-start">
           {/* Left side */}
           <div className="w-full md:w-1/3">
-            <h1 className="text-4xl md:text-4xl text-white font-bold">ABOUT ME</h1>
+            <h1 className="text-4xl md:text-4xl text-white font-bold">
+              ABOUT ME
+            </h1>
           </div>
 
           {/* Right side*/}
@@ -48,7 +50,7 @@ const AboutPage = () => {
 
                 <div className="flex space-x-4">
                   <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full hover:bg-gray-800 transition-colors duration-300">
-                    <a href="#" className="flex items-center justify-center">
+                    <a href="https://tinyurl.com/24fw857w" className="flex items-center justify-center">
                       <img
                         src={linkedin}
                         alt="linkedin logo"
@@ -57,7 +59,7 @@ const AboutPage = () => {
                     </a>
                   </div>
                   <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full hover:bg-gray-800 transition-colors duration-300">
-                    <a href="#" className="flex items-center justify-center">
+                    <a href="https://github.com/skrillzofficial" className="flex items-center justify-center">
                       <img src={github} alt="github logo" className="w-5 h-5" />
                     </a>
                   </div>
@@ -84,63 +86,60 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-10 items-start pt-20">
           {/* Left side */}
           <div className="w-full md:w-1/3">
-            <h1 className="text-3xl md:text-4xl text-white font-bold">MY CAPABILITIES</h1>
+            <h1 className="text-3xl md:text-4xl text-white font-bold">
+              MY CAPABILITIES
+            </h1>
           </div>
 
           {/* Right side */}
           <div className="w-full md:w-2/3">
             <p className="text-lg font mb-8">
-              I am a dedicated learner, constantly seeking to expand my skill set and tackle new challenges. I am committed to staying at the forefront of industry trends to deliver innovative solutions.
+              I am a dedicated learner, constantly seeking to expand my skill
+              set and tackle new challenges. I am committed to staying at the
+              forefront of industry trends to deliver innovative solutions.
             </p>
 
             {/* Skills grid with icons */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {/* HTML */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white ">HTML</span>
+                <span className=" text-white ">HTML</span>
               </div>
 
               {/* CSS */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className="font-bold text-white">CSS</span>
+                <span className=" text-white">CSS</span>
               </div>
 
               {/* JavaScript */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className="font-bold text-white">
-                  JavaScript
-                </span>
+                <span className=" text-white">JavaScript</span>
               </div>
 
               {/* React */}
               <div className="flex items-center font  justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white">React</span>
+                <span className="  text-white">React</span>
               </div>
 
               {/* Tailwind Css*/}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white">Tailwind Css</span>
+                <span className="  text-white">Tailwind Css</span>
               </div>
 
               {/* Jquery */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white">Jquery</span>
+                <span className="  text-white">Jquery</span>
               </div>
 
               {/* Accessibility */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white">
-                  Accessibility
-                </span>
+                <span className="  text-white">Accessibility</span>
               </div>
 
               {/* Figma */}
               <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
-                <span className=" font-bold text-white">
-                  Figma
-                </span>
+                <span className="  text-white">Figma</span>
               </div>
-
             </div>
           </div>
         </div>
