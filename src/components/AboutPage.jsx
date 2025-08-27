@@ -71,8 +71,8 @@ const AboutPage = () => {
 
         {/* image */}
         <div className="flex justify-center pt-16">
-          <div className="w-64 h-64 md:w-150 md:h-80 lg:w-196 lg:h-96 overflow-hidden rounded-lg">
-            <div className="w-full h-full flex items-center justify-center p-4">
+          <div className="w-[1224px] h-64 md:w-[1224px] md:h-80 lg:w-[1224px] lg:h-96 overflow-hidden rounded-lg">
+            <div className="w-full h-full flex items-center justify-center">
               <img
                 src={myimg}
                 alt="Profile"
@@ -100,44 +100,44 @@ const AboutPage = () => {
             </p>
 
             {/* Skills grid with icons */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2">
               {/* HTML */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center w-fit font justify-center p-2 bg-black rounded-full border border-[#484848]">
                 <span className=" text-white ">HTML</span>
               </div>
 
               {/* CSS */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className=" text-white">CSS</span>
               </div>
 
               {/* JavaScript */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className=" text-white">JavaScript</span>
               </div>
 
               {/* React */}
-              <div className="flex items-center font  justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit  justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className="  text-white">React</span>
               </div>
 
               {/* Tailwind Css*/}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className="  text-white">Tailwind Css</span>
               </div>
 
               {/* Jquery */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className="  text-white">Jquery</span>
               </div>
 
               {/* Accessibility */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
                 <span className="  text-white">Accessibility</span>
               </div>
 
               {/* Figma */}
-              <div className="flex items-center font justify-center p-2 bg-black rounded-full border">
+              <div className="flex items-center font w-fit justify-center border-[#484848] p-2 bg-black rounded-full border">
                 <span className="  text-white">Figma</span>
               </div>
             </div>
