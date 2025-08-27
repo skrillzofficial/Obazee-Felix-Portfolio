@@ -13,7 +13,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold mb-4">
             Hi, I'm Obazee Felix
           </h1>
-          <h3 className="text-xl md:text-2xl mb-8 leading-relaxed">
+          <h3 className="text-xl font md:text-2xl mb-8 leading-relaxed">
             I’m a full-stack developer based in Lagos Nigeria, with a strong
             focus on building seamless end-to-end web applications. From
             scalable APIs to responsive user experiences, I enjoy bringing ideas
@@ -52,9 +52,6 @@ const Hero = () => {
                 <img src={myimg} alt="" />
               </div>
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-[#C7C7C7]  opacity-30"></div>
-            <div className="absolute -top-4 -right-4 w-16 h-16 border-2 border-[#C7C7C7] opacity-30"></div>
           </div>
         </div>
       </div>

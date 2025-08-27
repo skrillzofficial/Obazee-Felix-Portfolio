@@ -69,7 +69,7 @@ const AboutPage = () => {
 
         {/* image */}
         <div className="flex justify-center pt-16">
-          <div className="w-64 h-64 md:w-150 md:h-80 lg:w-196 lg:h-96 overflow-hidden border rounded-lg">
+          <div className="w-64 h-64 md:w-150 md:h-80 lg:w-196 lg:h-96 overflow-hidden rounded-lg">
             <div className="w-full h-full flex items-center justify-center p-4">
               <img
                 src={myimg}

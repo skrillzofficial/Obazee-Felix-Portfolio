@@ -5,3 +5,6 @@
 .disabled {
         pointer-events: none;
     }
+.font{
+  font-family: Manrope;
+}
