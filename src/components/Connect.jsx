@@ -117,15 +117,16 @@ const Connect = () => {
   return (
     <section className="py-20 bg-black text-[#C7C7C7]" id="contact">
       <div className="w-11/12 container mx-auto">
-        <div className="">
+
+        <div className="flex flex-col lg:flex-row gap-16">
+          
+          {/* Contact Information */}
+          <div className="w-full lg:w-2/5">
+          <div className="">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             LET'S CONNECT
           </h1>
         </div>
-
-        <div className="flex flex-col lg:flex-row gap-16">
-          {/* Contact Information */}
-          <div className="w-full lg:w-2/5">
             <div className="space-y-3">
               <div className="flex items-start">
                 <div className="flex justify-center items-center gap-2">

@@ -93,7 +93,7 @@ const Projects = () => {
               {/* Image container*/}
               <div className="w-full md:w-1/2">
                 <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  <div className="flex justify-center items-center p-4 h-80">
+                  <div className="flex justify-center items-center p-4 h-100">
                     <img
                       src={betahouse}
                       alt="BetaHouse airBnb"
