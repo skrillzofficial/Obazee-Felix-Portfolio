@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
-import linkshort from "../assets/Links shortner.png";
-import betahouse from "../assets/Beta House.png";
+import linkshort from "../assets/Link shortner.png"
+import betahouse from "../assets/Beta H.png";
 const Projects = () => {
   return (
     <div>

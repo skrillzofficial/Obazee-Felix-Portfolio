@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto w-11/12 flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl text-white md:text-4xl lg:text-6xl font-bold mb-4">
             Hi, I'm Obazee Felix
           </h1>
           <h3 className="text-xl font md:text-2xl mb-8 leading-relaxed">
@@ -21,9 +21,9 @@ const Hero = () => {
           </h3>
           <div className="flex flex-row items-center justify-start sm:items-center space-x-4 space-y-4 sm:space-y-0 sm:space-x-6">
             <div className="bg-[#D3E97A] flex items-center px-3 rounded-full">
-              <button className="   text-black px-3 py-2 font-medium ">
+              <a href="#contact"><button className=" cursor-pointer  text-black px-3 py-2 font-medium ">
                 CONTACT ME
-              </button>
+              </button></a>
               <div className="w-3 h-3 hidden md:block rounded-full bg-black"></div>
               <ArrowUpRight className="text-black md:hidden" />
             </div>

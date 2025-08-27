@@ -283,7 +283,7 @@ const Connect = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#D3E97A] text-black font-medium py-3 px-6 rounded-full flex items-center justify-center hover:bg-[#c5da70] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-[#D3E97A] text-black font-semibold py-3 px-6 rounded-full flex items-center justify-center hover:bg-[#c5da70] transition-colors duration-300 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>
@@ -292,8 +292,7 @@ const Connect = () => {
                   </>
                 ) : (
                   <>
-                    <Mail size={18} className="mr-2" />
-                    Submit
+                    SUBMIT
                   </>
                 )}
               </button>

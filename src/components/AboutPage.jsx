@@ -19,7 +19,7 @@ const AboutPage = () => {
           {/* Right side*/}
           <div className="w-full md:w-2/3">
             <div className="space-y-6">
-              <p className="text-lg font leading-relaxed">
+              <p className="text-lg text-white leading-relaxed">
                 I'm a full-stack developer from Lagos, Nigeria, who loves the
                 entire journey of creation. I thrive on turning concepts into
                 reality, architecting robust APIs on the back-end and building
