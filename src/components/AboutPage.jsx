@@ -71,12 +71,12 @@ const AboutPage = () => {
 
         {/* image */}
         <div className="flex justify-center pt-16">
-          <div className="w-[1224px] h-64 md:w-[1224px] md:h-80 lg:w-[1224px] lg:h-96 overflow-hidden rounded-lg">
+          <div className="w-[1224px] h-[700px] md:w-[1224px] md:h-[700px] lg:w-[1224px] lg:h-[700px] overflow-hidden rounded-lg">
             <div className="w-full h-full flex items-center justify-center">
               <img
                 src={myimg}
                 alt="Profile"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover object-top rounded-lg"
               />
             </div>
           </div>
