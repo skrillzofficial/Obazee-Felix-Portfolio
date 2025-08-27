@@ -37,7 +37,7 @@ const AboutMe = () => {
 
               <div className="w-30">
                 <a
-                  href="/about"
+                  href="#about"
                   className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
                 >
                   <span>MORE ABOUT ME</span>

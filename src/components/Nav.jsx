@@ -17,7 +17,7 @@ const Nav = () => {
             Work
           </a>
           <a
-            href="#about"
+            href="/about"
             className="hover:text-white transition-colors duration-300"
           >
             About
