@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="bg-black py-16 md:py-24">
+    <section className="bg-black text-[#C7C7C7] py-16 md:py-24">
       <div className="container mx-auto w-11/12 flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="md:w-1/2 mb-12 md:mb-0">
