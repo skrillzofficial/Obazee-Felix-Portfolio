@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-100% h-75 md:w-80 md:h-80 lg:w-96 lg:h-96  overflow-hidden border rounded-lg border-[#333]">
               {/*   My image */}
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex object-top object-cover items-center justify-center">
                 <img src={myimg} alt="" />
               </div>
             </div>

@@ -49,8 +49,8 @@ const AboutMe = () => {
               <div className="relative">
                 <div className="w-100% h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 md:hidden rounded-lg overflow-hidden border border-[#333]">
                   {/*My image */}
-                  <div className="w-full h-full  flex items-center justify-center">
-                    <img src={myimg} alt="" className="object-top object-cover" />
+                  <div className="w-full h-full object-top object-cover  flex items-center justify-center">
+                    <img src={myimg} alt="" className="flex object-top object-cover" />
                   </div>
                 </div>
               </div>
