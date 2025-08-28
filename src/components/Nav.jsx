@@ -47,19 +47,19 @@ const Nav = () => {
           <div className="flex flex-col space-y-3">
             <a
               href="#work"
-              className="hover:text-white transition-colors duration-300"
+              className="hover:text-white disabled transition-colors duration-300"
             >
               Work
             </a>
             <a
-              href="#about"
+              href="/about"
               className="hover:text-white transition-colors duration-300"
             >
               About
             </a>
             <a
               href="#contact"
-              className="hover:text-white transition-colors duration-300"
+              className="hover:text-white disabled transition-colors duration-300"
             >
               Contact
             </a>
