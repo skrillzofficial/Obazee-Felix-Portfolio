@@ -35,7 +35,7 @@ const AboutMe = () => {
                 every part of the application is logically sound and performant.
               </p>
 
-              <div className="w-30">
+              <div className="w-18">
                 <a
                   href="/about"
                   className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
@@ -50,7 +50,7 @@ const AboutMe = () => {
                 <div className="w-100% h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 md:hidden rounded-lg overflow-hidden border border-[#333]">
                   {/*My image */}
                   <div className="w-full h-full  flex items-center justify-center">
-                    <img src={myimg} alt="" />
+                    <img src={myimg} alt="" className="object-top object-cover" />
                   </div>
                 </div>
               </div>
