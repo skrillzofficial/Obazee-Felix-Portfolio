@@ -173,7 +173,7 @@ const Projects = () => {
 
               {/* Content container */}
               <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
                   E-commerce platform for sustainable products
                 </h3>
                 <p className="mb-6 font leading-relaxed">
