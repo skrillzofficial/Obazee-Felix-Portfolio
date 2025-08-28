@@ -144,8 +144,8 @@ const Connect = () => {
                 <div className="flex justify-center items-center space-x-1.5">
                   <h3 className="md:text-lg font">For more info, here's my</h3>
                   <a
-                    href="#"
-                    className="border font border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
+                    href=""
+                    className="border font disabled border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
                   >
                     resume
                   </a>

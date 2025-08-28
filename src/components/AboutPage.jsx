@@ -43,8 +43,8 @@ const AboutPage = () => {
                   <button className="text-black text-[8px] font-bold md:text-lg px-3 py-2">
                     DOWNLOAD RESUME
                   </button>
-                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-black ml-2">
-                    <Download className="text-[#D3E97A] w-5 h-5" />
+                  <div className="w-3 h-3 flex items-center justify-center rounded-full bg-black ml-2">
+                    <Download className="text-[#D3E97A] md:hidden w-5 h-5" />
                   </div>
                 </div>
 
