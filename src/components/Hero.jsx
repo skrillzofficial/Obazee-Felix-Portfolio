@@ -1,5 +1,5 @@
 import React from "react";
-import myimg from "../assets/My image .png";
+import myimg from "../assets/obazee.jpeg";
 import github from "../assets/bxl-github.svg.png";
 import linkedin from "../assets/bxl-linkedin.svg.png";
 import { ArrowUpRight } from "lucide-react";
@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto w-11/12 flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-4xl text-white md:text-4xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold mb-4">
             Hi, I'm Obazee Felix
           </h1>
           <h3 className="text-xl font md:text-2xl mb-8 leading-relaxed">
