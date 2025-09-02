@@ -23,8 +23,8 @@ const Nav = () => {
             About
           </a>
           <a
-            href="#contact"
-            className="hover:text-white disabled transition-colors duration-300"
+            href="/contact"
+            className="hover:text-white transition-colors duration-300"
           >
             Contact
           </a>
@@ -58,8 +58,8 @@ const Nav = () => {
               About
             </a>
             <a
-              href="#contact"
-              className="hover:text-white disabled transition-colors duration-300"
+              href="/contact"
+              className="hover:text-white transition-colors duration-300"
             >
               Contact
             </a>
