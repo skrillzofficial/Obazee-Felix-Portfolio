@@ -11,8 +11,8 @@ const Nav = () => {
      
         <div className="hidden md:flex space-x-8">
           <a
-            href="#work"
-            className="hover:text-white disabled transition-colors duration-300"
+            href="/work"
+            className="hover:text-white transition-colors duration-300"
           >
             Work
           </a>
@@ -46,8 +46,8 @@ const Nav = () => {
         <div className="md:hidden container mx-auto w-11/12 mt-4 pb-4">
           <div className="flex flex-col space-y-3">
             <a
-              href="#work"
-              className="hover:text-white disabled transition-colors duration-300"
+              href="/work"
+              className="hover:text-white  transition-colors duration-300"
             >
               Work
             </a>
