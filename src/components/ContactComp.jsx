@@ -74,24 +74,18 @@ const ContactComp = () => {
                 <a 
                   href="https://github.com/skrillzofficial" 
                   className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://tinyurl.com/24fw857w" 
                   className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://x.com/skrillzofficial?s=21" 
                   className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
