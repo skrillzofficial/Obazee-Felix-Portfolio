@@ -332,7 +332,7 @@ const Projects = () => {
 
                 <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
                   <a
-                    href="https://eventra-liard.vercel.app/"
+                    href="https://eventry-swart.vercel.app/"
                     className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-white transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
