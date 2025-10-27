@@ -56,8 +56,9 @@ const AboutPage = () => {
                 <div className="bg-[#D3E97A] flex items-center px-3 rounded-full group hover:scale-105 transition-transform duration-300">
                   <a
                     href={cv}
-                    download="Obazee_Felix_Tech_CV.pdf"
-                    className="text-black disabled text-[10px] font-bold md:text-lg px-3 py-2 flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black text-[10px] font-bold md:text-lg px-3 py-2 flex items-center"
                   >
                     DOWNLOAD RESUME
                   </a>
