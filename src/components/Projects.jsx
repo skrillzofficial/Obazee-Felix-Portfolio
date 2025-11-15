@@ -1,361 +1,247 @@
-import React from "react";
-import { ExternalLink, Github } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ExternalLink, Github, ArrowUpRight, Sparkles } from "lucide-react";
 import linkshort from "../assets/Link shortner.png";
 import sentient from "../assets/sentient.png";
 import BetaHouse from "../assets/Beta H.png";
-import Eventra from "../assets/Eventra.png"
+import Eventra from "../assets/Eventra.png";
+
 const Projects = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Your event, our entry",
+      description: "Eventra is the all-in-one event management platform that empowers you to seamlessly plan, organize, and execute any event, from large corporate conferences to deeply personal wedding celebrations. Features real-time analytics, multi-vendor coordination, and automated workflows.",
+      image: Eventra,
+      tag: "Solo-Build",
+      year: "2025",
+      role: "Full-stack developer",
+      liveUrl: "https://eventra-teal.vercel.app/",
+      githubUrl: "https://github.com/skrillzofficial/Eventra",
+      tech: ["React", "Node.js", "MongoDB", "WebSocket"]
+    },
+    {
+      id: 2,
+      title: "Live like a local, not a tourist",
+      description: "Solo-built BetaHouse, a functional Airbnb clone with secure JWT authentication, advanced property search, real-time booking system, integrated messaging, and comprehensive review functionality. Built with scalable microservices architecture.",
+      image: BetaHouse,
+      tag: "Featured",
+      year: "2025",
+      role: "Full-stack developer",
+      client: "BetaHouse",
+      liveUrl: "https://beta-house-airbnb-front-end-18at.vercel.app/",
+      tech: ["React", "Express", "PostgreSQL", "AWS"]
+    },
+    {
+      id: 3,
+      title: "AI platform for agent battles",
+      description: "Co-developed Sentient struggle, a platform where AI meets survival. Collaborated on enabling users to create and watch AI agents battle. Key contributions included developing the real-time spectator system and implementing the payment infrastructure with Stripe.",
+      image: sentient,
+      tag: "Collaborative",
+      year: "2025",
+      role: "Full-stack developer",
+      client: "Sentient",
+      liveUrl: "https://sentient-jet.vercel.app/",
+      tech: ["React", "WebSocket", "Stripe", "AI"]
+    }
+  ];
+
   return (
-    <div>
-      {/* Featured Projects */}
-      <section className="py-20 bg-black text-[#C7C7C7]" id="work">
-        <div className="w-11/12 container mx-auto">
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">
+    <section className="py-20 bg-black text-[#C7C7C7] relative overflow-hidden" id="work">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `radial-gradient(circle at center, #D3E97A 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            transform: `translateY(${scrollY * 0.05}px)`
+          }}
+        ></div>
+      </div>
+
+      {/* Glowing Orbs */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-[#D3E97A]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D3E97A]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+
+      <div className="w-11/12 container mx-auto relative z-10">
+        {/* Header Section */}
+        <div className="mb-20 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white relative">
               FEATURED PROJECTS
+              <div className="absolute -bottom-2 left-0 h-1 w-24 bg-[#D3E97A] animate-[slideRight_0.8s_ease-out]"></div>
             </h2>
-            <p className=" font max-w-md">
-              Here are some of the selected projects that showcase my passion
-              for front-end development.
-            </p>
           </div>
+          <p className="text-lg max-w-2xl mt-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
+            Here are some of the selected projects that showcase my passion for full-stack development, 
+            innovative solutions, and creating exceptional user experiences.
+          </p>
+        </div>
 
-          <div className="space-y-32">
-            {/* Project 1 */}
-            <div className="flex flex-col md:flex-row gap-10 items-start">
-              {/* Image container  */}
-              <div className="w-full md:w-1/2">
-                <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  {/* Conceptual works header */}
-                  <div className="md:mb-5 bg-black w-40 text-center rounded-full">
-                    <h3 className="text-lg font">Conceptual works</h3>
-                  </div>
-
-                  {/* Centered image */}
-                  <div className="flex justify-center items-center p-4 h-80">
-                    <img
-                      src={linkshort}
-                      alt="Landing page for shorter links"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content container*/}
-              <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
-                  More than just shorter links
-                </h3>
-                <p className=" font mb-6 leading-relaxed">
-                  Independently architected and developed a responsive URL
-                  shortener. Delivered a complete product that effortlessly
-                  condenses long links into shareable, trackable URLs with a
-                  full suite of real-time performance analytics.
-                </p>
-
-                <div className="mb-4">
-                  <p className="text-white">PROJECT INFO</p>
-                </div>
-
-                <div className="flex flex-col gap-2 border-t border-gray-800 pt-2">
-                  <div className="flex font justify-between">
-                    <span>Year</span>
-                    <span>2025</span>
-                  </div>
-                  <div className="border-t font border-gray-800 pt-2">
-                    <div className="flex justify-between">
-                      <span>Role</span>
-                      <span>Front-end developer</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
-                  <a
-                    href="https://url-shortening-api-sable.vercel.app/"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span className="font">LIVE DEMO</span>
-                    <ExternalLink size={16} />
-                  </a>
-                  <a
-                    href="https://github.com/skrillzofficial/URL-shortening-API"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span className="font">SEE ON GITHUB</span>
-                    <Github size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="flex flex-col md:flex-row gap-10 items-start">
-              {/* Image container*/}
-              <div className="w-full md:w-1/2">
-                <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  <div className="flex justify-center items-center p-4 h-80 md:h-100">
-                    <img
-                      src={BetaHouse}
-                      alt="BetaHouse airBnb"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content container*/}
-              <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
-                  Live like a local, not a tourist.
-                </h3>
-                <p className="font mb-6 leading-relaxed">
-                  Solo-built BetaHouse, a functional Airbnb clone. Developed a
-                  responsive front-end and scalable backend with user
-                  authentication, property listing management, and a secure
-                  search system to facilitate seamless property management
-                  between hosts and guests..
-                </p>
-
-                <div className="mb-4">
-                  <p className="font text-white">PROJECT INFO</p>
-                </div>
-
-                <div className="flex flex-col gap-2 border-t border-gray-800 pt-2">
-                  <div className="border-b border-gray-800 pb-2">
-                    <div className="flex font justify-between">
-                      <span>Client</span>
-                      <span>BetaHouse</span>
-                    </div>
-                  </div>
-
-                  <div className="flex font justify-between">
-                    <span>Year</span>
-                    <span>2025</span>
-                  </div>
-                  <div className="border-t border-gray-800 pt-2">
-                    <div className="flex font justify-between">
-                      <span>Role</span>
-                      <span>Full-stack developer</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
-                  <a
-                    href="https://beta-house-airbnb-front-end-18at.vercel.app/"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span>VIEW PROJECT</span>
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="flex flex-col md:flex-row gap-10 items-start">
-              {/* Image container*/}
-              <div className="w-full md:w-1/2">
-                <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  <div className="md:mb-5 bg-black w-30 text-center rounded-full">
-                    <h3 className="text-lg font">Challenge</h3>
-                  </div>
-                  <div className="flex justify-center items-center p-4 h-80">
-                    <img
-                      src="https://tinyurl.com/24bufw83"
-                      alt="E-commerce platform for sustainable products"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content container */}
-              <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
-                  E-commerce platform for sustainable products
-                </h3>
-                <p className="mb-6 font leading-relaxed">
-                  Successfully built the backend logic and API endpoints for a
-                  dynamic product page, implementing robust cart functionality
-                  and a scalable service for image management, showcasing
-                  proficiency in server-side development.
-                </p>
-
-                <div className="mb-4">
-                  <p className="text-white font">PROJECT INFO</p>
-                </div>
-
-                <div className="flex flex-col gap-2 border-t border-gray-800 pt-2">
-                  <div className="flex font justify-between">
-                    <span>Year</span>
-                    <span>2025</span>
-                  </div>
-                  <div className="border-t border-gray-800 pt-2">
-                    <div className="flex font justify-between">
-                      <span>Role</span>
-                      <span>Full-stack developer</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
-                  <a
-                    href="https://backend-authentication-and-crud-api.onrender.com/"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span>LIVE DEMO</span>
-                    <ExternalLink size={16} />
-                  </a>
-                  <a
-                    href="https://github.com/skrillzofficial/Backend-Authentication-and-CRUD-API"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span>SEE ON GITHUB</span>
-                    <Github size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Project 4 */}
-            <div className="flex flex-col md:flex-row gap-10 items-start">
-              {/* Image container*/}
-              <div className="w-full md:w-1/2">
-                <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col">
-                  <div className="flex justify-center items-center p-4 h-80 md:h-100">
-                    <img
-                      src={sentient}
-                      alt="Sentient"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content container*/}
-              <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
-                  AI platform for agent battles.
-                </h3>
-                <p className="font mb-6 leading-relaxed">
-                  Co-developed Sentient struggle, a platform where AI meets
-                  survival. Collaborated on enabling users to create, and watch
-                  AI agents battle experiences. Key contributions included
-                  developing the real-time spectator system and implementing the
-                  payment infrastructure.
-                </p>
-
-                <div className="mb-4">
-                  <p className="font text-white">PROJECT INFO</p>
-                </div>
-
-                <div className="flex flex-col gap-2 border-t border-gray-800 pt-2">
-                  <div className="border-b border-gray-800 pb-2">
-                    <div className="flex font justify-between">
-                      <span>Client</span>
-                      <span>Sentient</span>
-                    </div>
-                  </div>
-
-                  <div className="flex font justify-between">
-                    <span>Year</span>
-                    <span>2025</span>
-                  </div>
-                  <div className="border-t border-gray-800 pt-2">
-                    <div className="flex font justify-between">
-                      <span>Role</span>
-                      <span>Full-stack developer</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
-                  <a
-                    href="https://sentient-jet.vercel.app//"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A]"
-                  >
-                    <span>VIEW PROJECT</span>
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Project 5 */}
-            <div className="flex flex-col md:flex-row gap-10 items-start mb-32">
-              {/* Image container */}
+        {/* Projects Grid */}
+        <div className="space-y-32">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`flex flex-col ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              } gap-10 items-start opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]`}
+              style={{ animationDelay: `${0.4 + index * 0.2}s` }}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              {/* Image Container */}
               <div className="w-full md:w-1/2 relative group">
-                <div className="bg-gray-300/10 rounded-lg p-6 flex flex-col h-full">
-                  <div className="md:mb-5 bg-black w-40 text-center rounded-full mb-4">
-                    <h3 className="text-lg font">Solo-Build work</h3>
+                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-8 backdrop-blur-sm border border-gray-800/50 transition-all duration-500 hover:border-[#D3E97A]/50 hover:shadow-2xl hover:shadow-[#D3E97A]/10 overflow-hidden">
+                  {/* Tag Badge */}
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="bg-black/50 px-4 py-2 rounded-full border border-[#D3E97A]/30 backdrop-blur-sm">
+                      <span className="text-sm text-[#D3E97A] font-medium flex items-center gap-2">
+                        {project.tag}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex justify-center items-center p-4 h-80">
+
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden rounded-xl h-80 bg-black/20">
                     <img
-                      src={Eventra}
-                      alt="Landing page for shorter links"
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-700"
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-contain transition-all duration-700 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Tech Stack on Hover */}
+                    <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1.5 bg-black/80 backdrop-blur-sm text-[#D3E97A] text-xs font-medium rounded-full border border-[#D3E97A]/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#D3E97A]/5 to-transparent blur-xl"></div>
                   </div>
                 </div>
               </div>
 
-              {/* Content container*/}
-              <div className="w-full md:w-1/2 mt-10">
-                <h3 className="text-2xl font md:text-3xl font-bold text-white mb-4">
-                  Your event, our entry
+              {/* Content Container */}
+              <div className="w-full md:w-1/2 mt-10 md:mt-0">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 hover:text-[#D3E97A] transition-colors duration-300 cursor-default">
+                  {project.title}
                 </h3>
-                <p className="font mb-6 leading-relaxed">
-                  Eventra is the all-in-one event management platform that
-                  empowers you to seamlessly plan, organize, and execute any
-                  event, from large corporate conferences to deeply personal
-                  wedding celebrations. We provide the tools; you create the
-                  magic.
+                
+                <p className="mb-8 leading-relaxed text-gray-300 text-base">
+                  {project.description}
                 </p>
 
-                <div className="mb-4">
-                  <p className="text-white">PROJECT INFO</p>
-                </div>
-
-                <div className="flex flex-col gap-2 border-t border-gray-800 pt-2">
-                  <div className="flex font justify-between">
-                    <span>Year</span>
-                    <span>2025</span>
-                  </div>
-                  <div className="border-t font border-gray-800 pt-2">
-                    <div className="flex justify-between">
-                      <span>Role</span>
-                      <span>Full-stack developer</span>
+                {/* Project Info */}
+                <div className="mb-8">
+                  <p className="text-white font-semibold mb-4 text-sm tracking-wider flex items-center gap-2">
+                    PROJECT INFO
+                    <div className="h-px flex-1 bg-gradient-to-r from-gray-800 to-transparent"></div>
+                  </p>
+                  
+                  <div className="space-y-3">
+                    {project.client && (
+                      <div className="flex justify-between items-center py-3 border-b border-gray-800/50 hover:border-[#D3E97A]/30 transition-colors duration-300">
+                        <span className="text-gray-400">Client</span>
+                        <span className="text-white font-medium">{project.client}</span>
+                      </div>
+                    )}
+                    <div className="flex justify-between items-center py-3 border-b border-gray-800/50 hover:border-[#D3E97A]/30 transition-colors duration-300">
+                      <span className="text-gray-400">Year</span>
+                      <span className="text-white font-medium">{project.year}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-gray-800/50 hover:border-[#D3E97A]/30 transition-colors duration-300">
+                      <span className="text-gray-400">Role</span>
+                      <span className="text-white font-medium">{project.role}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex gap-4 mb-6 pt-4 border-t border-gray-800">
-                  <a
-                    href="https://eventra-teal.vercel.app/"
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-white transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="font">LIVE DEMO</span>
-                    <ExternalLink size={16} />
-                  </a>
-                  <a
-                    href=""
-                    className="flex items-center gap-2 text-[#D3E97A] text-sm border border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-white transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="font">SEE ON GITHUB</span>
-                    <Github size={16} />
-                  </a>
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-800/50">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      className="group flex items-center gap-2 px-6 py-3 bg-[#D3E97A] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-[#D3E97A]/20 hover:-translate-y-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>VIEW PROJECT</span>
+                      <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      className="group flex items-center gap-2 px-6 py-3 border-2 border-[#D3E97A]/30 text-[#D3E97A] font-semibold rounded-lg transition-all duration-300 hover:bg-[#D3E97A]/10 hover:border-[#D3E97A] hover:-translate-y-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={18} />
+                      <span>VIEW CODE</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* View All Projects CTA */}
+        <div className="mt-32 text-center opacity-0 animate-[fadeInUp_0.8s_ease-out_1.5s_forwards]">
+          <div className="inline-block">
+            <a 
+              href="work"
+              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#D3E97A] to-[#b8cc5e] text-black font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#D3E97A]/30 hover:-translate-y-1"
+            >
+              <span className="relative z-10">View All Projects</span>
+              <ArrowUpRight size={20} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </a>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideRight {
+          from {
+            width: 0;
+          }
+          to {
+            width: 6rem;
+          }
+        }
+      `}</style>
+    </section>
   );
 };
 
