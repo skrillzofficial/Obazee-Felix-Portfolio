@@ -4,7 +4,7 @@ import linkshort from "../assets/Link shortner.png";
 import sentient from "../assets/sentient.png";
 import BetaHouse from "../assets/Beta H.png";
 import Eventra from "../assets/Eventra.png";
-import Inklune from "../assets/Inklune.png"
+import Inklune from "../assets/inklune.png"
 
 const WorkComponent = () => {
   const [scrollY, setScrollY] = useState(0);
