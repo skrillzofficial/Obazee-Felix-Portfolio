@@ -118,7 +118,7 @@ const WorkComponent = () => {
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(#D3E97A 1px, transparent 1px), linear-gradient(90deg, #D3E97A 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#D3E97A 1px, transparent 1px),  linear-gradient(90deg, #D3E97A 1px, transparent 1px)`,
           backgroundSize: '50px 50px',
           transform: `translateY(${scrollY * 0.1}px)`
         }}></div>
