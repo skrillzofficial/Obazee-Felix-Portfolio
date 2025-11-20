@@ -1,120 +1,201 @@
 import React from "react";
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Github,
+  Linkedin,
+  MessageCircle,
+  ArrowUpRight,
+  Calendar,
+} from "lucide-react";
 
 const ContactComp = () => {
-  return (
-    <section id="contact" className="py-20 bg-black text-[#C7C7C7] relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#D3E97A]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D3E97A]/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
-      
-      <div className="container mx-auto w-11/12 relative z-10">
-        <div className="flex flex-col md:flex-row gap-16 items-start mb-16">
-          {/* Left side */}
-          <div className="w-full md:w-1/3">
-            <h1 className="text-3xl md:text-4xl text-white font-bold">
-              GET IN TOUCH
-            </h1>
-          </div>
+  const contactMethods = [
+    {
+      icon: <Mail className="w-5 h-5" />,
+      title: "Email",
+      value: "obazeefelixadetayo@gmail.com",
+      href: "mailto:obazeefelixadetayo@gmail.com",
+      description: "Fastest response time",
+      action: "Send message",
+    },
+    {
+      icon: <Phone className="w-5 h-5" />,
+      title: "Phone",
+      value: "+234 704 621 1756",
+      href: "tel:+2347046211756",
+      description: "Call or WhatsApp",
+      action: "Call now",
+    },
+    {
+      icon: <MapPin className="w-5 h-5" />,
+      title: "Location",
+      value: "Lagos, Nigeria",
+      description: "Remote collaboration",
+      action: "View map",
+    },
+  ];
 
-          {/* Right side */}
-          <div className="w-full md:w-2/3">
-            <p className="text-lg mb-8">
-              I'm currently available for freelance work and open to new opportunities. 
-              If you have a project in mind or just want to say hello, feel free to reach out.
-            </p>
+  const socialLinks = [
+    {
+      icon: <Github className="w-5 h-5" />,
+      href: "https://github.com/skrillzofficial",
+      label: "GitHub",
+      handle: "@skrillzofficial",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://linkedin.com/in/yourprofile",
+      label: "LinkedIn",
+      handle: "Obazee Felix",
+    },
+    {
+      icon: <MessageCircle className="w-5 h-5" />,
+      href: "https://x.com/skrillzofficial",
+      label: "Twitter",
+      handle: "@skrillzofficial",
+    },
+  ];
+
+  return (
+    <section
+      id="contact"
+      className="py-20 bg-white text-gray-900 relative overflow-hidden"
+    >
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(90deg, transparent 79px, #000 79px, #000 81px, transparent 81px),
+                           linear-gradient(transparent 79px, #000 79px, #000 81px, transparent 81px)`,
+            backgroundSize: "100px 100px",
+          }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto w-11/12 max-w-6xl relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-full mb-6">
+            <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
+            <span className="text-sm font-medium tracking-wider">CONTACT</span>
           </div>
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6">
+            Let's Work <span className="font-medium">Together</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Ready to bring your next project to life? Let's discuss how we can
+            create something exceptional together.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-6">CONTACT INFORMATION</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="text-[#D3E97A] w-5 h-5" />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          {/* Contact Methods */}
+          {contactMethods.map((method, index) => (
+            <div key={index} className="group">
+              <div className="bg-gray-50 border border-gray-200 p-8 h-full transition-all duration-500 group-hover:border-gray-300 group-hover:bg-white">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                    {method.icon}
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Email</h3>
-                    <a href="mailto:obazeefelix8@gmail.com" className="text-[#C7C7C7] hover:text-[#D3E97A] transition-colors duration-300">
-                      obazeefelixadetayo@gmail.com
+                    <h3 className="text-lg font-medium text-gray-900">
+                      {method.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {method.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-gray-900 font-medium">{method.value}</p>
+                  {method.href && (
+                    <a
+                      href={method.href}
+                      className="group/btn inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
+                    >
+                      <span className="text-sm font-medium">
+                        {method.action}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <MapPin className="text-[#D3E97A] w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-medium">Location</h3>
-                    <p className="text-[#C7C7C7]">Lagos, Nigeria</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Phone className="text-[#D3E97A] w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-medium">Phone</h3>
-                    <p className="text-[#C7C7C7]">+234 7046211756</p>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
+          ))}
+        </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Social & Calendar */}
+          <div className="space-y-12">
             {/* Social Links */}
             <div>
-              <h2 className="text-xl font-semibold text-white mb-6">FOLLOW ME</h2>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://github.com/skrillzofficial" 
-                  className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://tinyurl.com/24fw857w" 
-                  className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://x.com/skrillzofficial?s=21" 
-                  className="w-12 h-12 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#484848] hover:bg-[#D3E97A] hover:text-black transition-all duration-300"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
+              <h3 className="text-2xl font-light text-gray-900 mb-8">
+                Connect Online
+              </h3>
+              <div className="space-y-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 p-4 border border-gray-200 hover:border-gray-300 transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                      {social.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-1">
+                        <span className="font-medium text-gray-900">
+                          {social.label}
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 text-gray-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </div>
+                      <p className="text-sm text-gray-600">{social.handle}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
 
-          {/* Visual Element */}
-          <div className="flex items-center justify-center">
-            <div className="relative">
-              <div className="w-64 h-64 rounded-full bg-[#D3E97A]/10 flex items-center justify-center">
-                <div className="w-48 h-48 rounded-full bg-[#D3E97A]/20 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-[#D3E97A]/30 flex items-center justify-center">
-                    <MessageCircle className="text-[#D3E97A] w-16 h-16" />
-                  </div>
-                </div>
+            {/* Calendar CTA */}
+            <div className="bg-gray-900 text-white p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <Calendar className="w-6 h-6" />
+                <h3 className="text-lg font-medium">Schedule a Call</h3>
               </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#D3E97A] rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#D3E97A] rounded-full opacity-30 animate-pulse delay-1000"></div>
-              <div className="absolute top-12 -left-6 w-5 h-5 bg-[#D3E97A] rounded-full opacity-40 animate-pulse delay-500"></div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Let's find time to discuss your project in detail. Book a
+                meeting that works for your schedule.
+              </p>
+              <a
+                href="#"
+                className="group/btn inline-flex items-center gap-2 text-white font-medium hover:text-gray-200 transition-colors"
+              >
+                <span>View Calendar</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-20">
-          <h3 className="text-xl text-white font-semibold mb-6">Ready to start a project together?</h3>
+        {/* Bottom CTA */}
+        <div className="text-center mt-20 pt-12 border-t border-gray-200">
+          <p className="text-gray-600 mb-6">
+            Ready to start your next project?
+          </p>
+          <a
+            href="mailto:obazeefelixadetayo@gmail.com"
+            className="group inline-flex items-center gap-3 px-12 py-5 bg-gray-900 text-white text-lg font-medium hover:bg-gray-800 transition-all duration-300 border border-gray-900"
+          >
+            <span>Start a Conversation</span>
+            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
         </div>
       </div>
     </section>

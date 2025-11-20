@@ -11,82 +11,228 @@ import {
   Database,
   Cpu,
   Zap,
+  MapPin,
+  Calendar,
+  Award,
 } from "lucide-react";
 import cv from "../assets/Obazee_Felix_Tech_CV.pdf";
 
 const AboutPage = () => {
+  const skills = [
+    {
+      category: "Frontend",
+      icon: <Palette className="w-5 h-5" />,
+      items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"]
+    },
+    {
+      category: "Backend",
+      icon: <Server className="w-5 h-5" />,
+      items: ["Node.js", "Express", "REST APIs"]
+    },
+    {
+      category: "Tools",
+      icon: <Cpu className="w-5 h-5" />,
+      items: ["Git", "Figma", "jQuery"]
+    },
+    {
+      category: "Database",
+      icon: <Database className="w-5 h-5" />,
+      items: ["MongoDB"]
+    }
+  ];
+
   return (
-    <section className="py-20 bg-black text-[#C7C7C7] relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#D3E97A]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D3E97A]/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+    <section className="py-20 bg-white text-gray-900 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-20 right-10 w-64 h-64 bg-gray-50 rounded-full blur-3xl opacity-60"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-gray-50 rounded-full blur-3xl opacity-40"></div>
 
       <div className="w-11/12 container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row gap-16 items-start">
-          {/* Left side */}
-          <div className="w-full md:w-1/3">
-            <h1 className="text-4xl md:text-4xl text-white font-bold">
-              ABOUT ME
-            </h1>
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-full mb-6">
+            <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
+            <span className="text-sm font-medium tracking-wider">ABOUT ME</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
+            From Science to <span className="font-medium">Software</span>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            A unique journey from animal genetics to full-stack development, 
+            combining analytical thinking with creative problem-solving.
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-16 items-start mb-20">
+          {/* Left Column - Image */}
+          <div className="w-full lg:w-2/5">
+            <div className="relative">
+              <div className="bg-gray-50 border border-gray-200">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={myimg}
+                    alt="Obazee Felix"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+              
+              {/* Location Badge */}
+              <div className="absolute -bottom-6 -left-6 bg-white border border-gray-200 px-6 py-4 shadow-sm">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-gray-600" />
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">Lagos, Nigeria</div>
+                    <div className="text-xs text-gray-500">Based here</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Right side*/}
-          <div className="w-full md:w-2/3">
+          {/* Right Column - Content */}
+          <div className="w-full lg:w-3/5 space-y-8">
+            {/* Introduction */}
             <div className="space-y-6">
-              <p className="text-[20px] font text-white leading-relaxed">
-                I'm a full-stack developer from Lagos, Nigeria, who loves the
-                entire journey of creation. I thrive on turning concepts into
-                reality, architecting robust APIs on the back-end and building
-                engaging, responsive experiences on the front-end.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                I'm a full-stack developer from Lagos, Nigeria, passionate about 
+                creating digital experiences that blend technical excellence with 
+                intuitive design. I specialize in building scalable applications 
+                from concept to deployment.
               </p>
 
-              <p className="text-lg font leading-relaxed">
-                My journey into tech is unconventional. My academic background
-                is in Animal Genetics and Breeding, a field deeply rooted in
-                data analysis, pattern recognition, and systematic
-                problem-solving. I discovered I was more passionate about
-                building the tools that drive science than conducting the
-                experiments themselves. Now, as a full-stack developer, I apply
-                that same analytical mindset to architecting scalable back-end
-                systems and creating intuitive front-end experiences, ensuring
-                every part of the application is logically sound and performant.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                My journey into technology began in Animal Genetics and Breeding, 
+                where I developed a strong foundation in data analysis and systematic 
+                problem-solving. I discovered my true passion lies in building the 
+                tools that power innovation rather than just using them.
               </p>
 
-              <div className="flex flex-row items-center justify-start sm:items-center space-x-4 space-y-4 sm:space-y-0 sm:space-x-6">
-                <div className="bg-[#D3E97A] flex items-center px-3 rounded-full group hover:scale-105 transition-transform duration-300">
-                  <a
-                    href={cv}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black text-[10px] font-bold md:text-lg px-3 py-2 flex items-center"
-                  >
-                    DOWNLOAD RESUME
-                  </a>
-                  <div className="w-3 h-3 flex items-center justify-center rounded-full bg-black ml-2 group-hover:animate-bounce">
-                    <Download className="text-[#D3E97A] md:hidden w-5 h-5" />
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Today, I apply that analytical mindset to full-stack development, 
+                ensuring every application is architecturally sound, performant, 
+                and delivers exceptional user experiences.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-6 border-y border-gray-200">
+              <div className="text-center">
+                <div className="text-2xl font-light text-gray-900 mb-1">20+</div>
+                <div className="text-sm text-gray-600">Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-gray-900 mb-1">2+</div>
+                <div className="text-sm text-gray-600">Years</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-gray-900 mb-1">Full</div>
+                <div className="text-sm text-gray-600">Stack</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-gray-900 mb-1">20+</div>
+                <div className="text-sm text-gray-600">Clients</div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <a
+                href={cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all duration-300 border border-gray-900"
+              >
+                <Download className="w-5 h-5" />
+                <span>DOWNLOAD RESUME</span>
+              </a>
+
+              <div className="flex gap-3">
+                <a
+                  href="https://tinyurl.com/24fw857w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center bg-gray-100 border border-gray-200 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                >
+                  <img src={linkedin} alt="LinkedIn" className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://github.com/skrillzofficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center bg-gray-100 border border-gray-200 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                >
+                  <img src={github} alt="GitHub" className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="py-16 border-t border-gray-200">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Header */}
+            <div className="w-full lg:w-1/3">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+                Education & <span className="font-medium">Background</span>
+              </h2>
+            </div>
+
+            {/* Timeline */}
+            <div className="w-full lg:w-2/3">
+              <div className="space-y-12 relative">
+                {/* Timeline line */}
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+
+                {/* Education Item 1 */}
+                <div className="flex relative">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center z-10">
+                    <Award className="text-white w-6 h-6" />
+                  </div>
+                  <div className="ml-8 flex-1">
+                    <h3 className="text-xl font-medium text-gray-900 mb-2">
+                      Full Stack Development Program
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                      <span className="font-medium">TechStudio Academy</span>
+                      <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>2025</span>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">
+                      Comprehensive training in modern web development including React, 
+                      Node.js, databases, and deployment strategies. Focused on building 
+                      production-ready applications.
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-110">
-                    <a
-                      href="https://tinyurl.com/24fw857w"
-                      className="flex items-center justify-center"
-                    >
-                      <img
-                        src={linkedin}
-                        alt="linkedin logo"
-                        className="w-5 h-5"
-                      />
-                    </a>
+                {/* Education Item 2 */}
+                <div className="flex relative">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gray-100 border border-gray-300 rounded-full flex items-center justify-center z-10">
+                    <BookOpen className="text-gray-700 w-6 h-6" />
                   </div>
-                  <div className="w-10 h-10 flex items-center justify-center bg-gray-900 rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-110">
-                    <a
-                      href="https://github.com/skrillzofficial"
-                      className="flex items-center justify-center"
-                    >
-                      <img src={github} alt="github logo" className="w-5 h-5" />
-                    </a>
+                  <div className="ml-8 flex-1">
+                    <h3 className="text-xl font-medium text-gray-900 mb-2">
+                      BSc in Animal Science
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                      <span className="font-medium">Obafemi Awolowo University</span>
+                      <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>2016 - 2023</span>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">
+                      Developed strong analytical and problem-solving skills through 
+                      rigorous scientific training, data analysis, and research methodology. 
+                      This foundation in systematic thinking translates directly to software architecture.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -94,175 +240,43 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* image */}
-        <div className="flex justify-center pt-16 relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-[#D3E97A]/20 to-transparent rounded-lg blur-lg opacity-50"></div>
-          <div className="w-full max-w-4xl h-[500px] md:h-[600px] overflow-hidden rounded-lg relative z-10 border border-[#484848]/30">
-            <div className="w-full h-full flex items-center justify-center">
-              <img
-                src={myimg}
-                alt="Profile"
-                className="w-full h-full object-cover object-top rounded-lg hover:scale-105 transition-transform duration-700"
-              />
+        {/* Skills Section */}
+        <div className="py-16 border-t border-gray-200">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Header */}
+            <div className="w-full lg:w-1/3">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+                Technical <span className="font-medium">Capabilities</span>
+              </h2>
+              <p className="text-gray-600 mt-4 leading-relaxed">
+                I am a dedicated learner, constantly expanding my skill set to 
+                tackle new challenges and stay at the forefront of industry trends.
+              </p>
             </div>
-          </div>
-        </div>
 
-        {/* Education section */}
-        <div className="flex flex-col md:flex-row gap-10 items-start pt-20">
-          {/* Left side */}
-          <div className="w-full md:w-1/3">
-            <h1 className="text-3xl md:text-4xl text-white font-bold">
-              EDUCATION
-            </h1>
-          </div>
-
-          {/* Right side */}
-          <div className="w-full md:w-2/3">
-            <div className="space-y-10 relative">
-              {/* Timeline line */}
-              <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-[#484848]/50"></div>
-
-              {/* Education item 1 */}
-              <div className="flex relative">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#D3E97A] flex items-center justify-center z-10">
-                  <BookOpen className="text-black w-5 h-5" />
-                </div>
-                <div className="ml-6">
-                  <h3 className="text-xl font-semibold text-white">
-                    Full Stack Development Program
-                  </h3>
-                  <p className="text-[#D3E97A]">TechStudio Academy</p>
-                  <p className="text-sm text-[#999]">2025 - 2025</p>
-                  <p className="mt-2 font">
-                    Comprehensive training in modern web development including
-                    React, Node.js, databases, and deployment strategies.
-                  </p>
-                </div>
-              </div>
-
-              {/* Education item 2 */}
-              <div className="flex relative">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#484848] flex items-center justify-center z-10 border border-[#D3E97A]/30">
-                  <BookOpen className="text-[#D3E97A] w-5 h-5" />
-                </div>
-                <div className="ml-6">
-                  <h3 className="text-xl font-semibold text-white">
-                    BSc in Animal Science
-                  </h3>
-                  <p className="text-[#D3E97A]">Obafemi Awolowo University</p>
-                  <p className="text-sm text-[#999]">2016 - 2023</p>
-                  <p className="mt-2 font">
-                    Developed strong analytical and problem-solving skills
-                    through rigorous scientific training and data analysis.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Skills section */}
-        <div className="flex flex-col md:flex-row gap-10 items-start pt-20">
-          {/* Left side */}
-          <div className="w-full md:w-1/3">
-            <h1 className="text-3xl md:text-4xl text-white font-bold">
-              MY CAPABILITIES
-            </h1>
-          </div>
-
-          {/* Right side */}
-          <div className="w-full md:w-2/3">
-            <p className="text-lg font mb-8">
-              I am a dedicated learner, constantly seeking to expand my skill
-              set and tackle new challenges. I am committed to staying at the
-              forefront of industry trends to deliver innovative solutions.
-            </p>
-
-            {/* Skills categories */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* Frontend */}
-              <div className="bg-[#0A0A0A] p-6 rounded-lg border border-[#484848]/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-3">
-                    <Palette className="text-[#D3E97A] w-5 h-5" />
+            {/* Skills Grid */}
+            <div className="w-full lg:w-2/3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {skills.map((skill, index) => (
+                  <div key={index} className="p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300 group">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        {skill.icon}
+                      </div>
+                      <h3 className="text-lg font-medium text-gray-900">{skill.category}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {skill.items.map((item, itemIndex) => (
+                        <span
+                          key={itemIndex}
+                          className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm font-medium border border-gray-200 hover:border-gray-300 transition-colors"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">Frontend</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center w-fit font justify-center py-1 px-5 bg-black rounded-full border border-[#484848]">
-                    <span className="text-white">HTML</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">CSS</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">JAVASCRIPT</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">REACT</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">TAILWIND CSS</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Backend */}
-              <div className="bg-[#0A0A0A] p-6 rounded-lg border border-[#484848]/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-3">
-                    <Server className="text-[#D3E97A] w-5 h-5" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">Backend</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">NODE.JS</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">EXPRESS</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">REST APIs</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tools */}
-              <div className="bg-[#0A0A0A] p-6 rounded-lg border border-[#484848]/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-3">
-                    <Cpu className="text-[#D3E97A] w-5 h-5" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">Tools</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">GIT</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">FIGMA</span>
-                  </div>
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">JQUERY</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Database */}
-              <div className="bg-[#0A0A0A] p-6 rounded-lg border border-[#484848]/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D3E97A]/10 flex items-center justify-center mr-3">
-                    <Database className="text-[#D3E97A] w-5 h-5" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">Database</h3>
-                </div>
-                <div className="flex gap-2">
-                  <div className="flex items-center font w-fit justify-center p-2 bg-black border-[#484848] rounded-full border">
-                    <span className="text-white">MONGODB</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

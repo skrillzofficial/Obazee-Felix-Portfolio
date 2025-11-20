@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X, Linkedin, Github, Instagram, Mail, Loader } from "lucide-react";
+import { Linkedin, Github, Mail, Loader, ArrowUpRight, MapPin } from "lucide-react";
 import emailjs from "emailjs-com";
 
 const Connect = () => {
@@ -10,10 +10,9 @@ const Connect = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
-  // Email validation pattern
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
@@ -26,7 +25,6 @@ const Connect = () => {
       [name]: value,
     });
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -38,24 +36,20 @@ const Connect = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
 
-    // Email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
 
-    // Subject validation
     if (!formData.subject.trim()) {
       newErrors.subject = "Subject is required";
     }
 
-    // Message validation
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
@@ -67,7 +61,6 @@ const Connect = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate form 
     if (!validateForm()) {
       return;
     }
@@ -76,7 +69,6 @@ const Connect = () => {
     setSubmitStatus(null);
 
     try {
-      // EmailJS 
       const serviceID = "service_tkcteca";
       const templateID = "template_y7q38am";
       const userID = "G9VrsnJ4gKxaJPO20";
@@ -97,7 +89,6 @@ const Connect = () => {
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
 
-      // Reset status after 2 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 2000);
@@ -105,7 +96,6 @@ const Connect = () => {
       console.error("Email sending failed:", error);
       setSubmitStatus("error");
 
-      // Reset status after 2 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 2000);
@@ -114,74 +104,107 @@ const Connect = () => {
     }
   };
 
+  const socialLinks = [
+    {
+      icon: <Linkedin size={20} />,
+      href: "https://tinyurl.com/24fw857w",
+      label: "LinkedIn"
+    },
+    {
+      icon: <Github size={20} />,
+      href: "https://github.com/skrillzofficial",
+      label: "GitHub"
+    },
+    {
+      icon: <Mail size={20} />,
+      href: "mailto:Obazeefelixadetayo@gmail.com",
+      label: "Email"
+    }
+  ];
+
   return (
-    <section className="py-20 bg-black text-[#C7C7C7]" id="contact">
-      <div className="w-11/12 container mx-auto">
+    <section className="py-20 bg-white text-gray-900 relative overflow-hidden" id="contact">
+      {/* Background Elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-gray-50 rounded-full blur-3xl opacity-60"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gray-50 rounded-full blur-3xl opacity-40"></div>
+
+      <div className="w-11/12 container mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-full mb-6">
+            <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
+            <span className="text-sm font-medium tracking-wider">GET IN TOUCH</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
+            Let's Build <span className="font-medium">Something Great</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Ready to bring your next project to life? Let's discuss how we can collaborate 
+            to create exceptional digital experiences.
+          </p>
+        </div>
 
         <div className="flex flex-col lg:flex-row gap-16">
-          
           {/* Contact Information */}
           <div className="w-full lg:w-2/5">
-          <div className="">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            LET'S CONNECT
-          </h1>
-        </div>
-            <div className="space-y-3">
-              <div className="flex items-start">
-                <div className="flex justify-center items-center gap-2">
-                  <h3 className="md:text-lg font">Say hello at</h3>
-                  <a
-                    href="mailto:Obazeefelixadetayo@gmail.com"
-                    className="border font border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
-                  >
-                    Obazeefelixadetayo@gmail.com
-                  </a>
+            <div className="space-y-8">
+              {/* Contact Methods */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 border border-gray-200 hover:border-gray-300 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                    <Mail className="w-5 h-5 text-gray-700" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Email me at</p>
+                    <a
+                      href="mailto:Obazeefelixadetayo@gmail.com"
+                      className="text-gray-900 font-medium hover:text-gray-700 transition-colors"
+                    >
+                      Obazeefelixadetayo@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 border border-gray-200 hover:border-gray-300 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                    <MapPin className="w-5 h-5 text-gray-700" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Based in</p>
+                    <p className="text-gray-900 font-medium">Lagos, Nigeria</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <div className="flex justify-center items-center space-x-1.5">
-                  <h3 className="md:text-lg font">For more info, here's my</h3>
-                  <a
-                    href=""
-                    className="border font disabled border-t-0 border-l-0 border-r-0 border-b-[#D3E97A] hover:text-[#D3E97A] transition-colors"
-                  >
-                    resume
-                  </a>
-                </div>
+              {/* Resume Download */}
+              <div className="p-6 bg-gray-50 border border-gray-200">
+                <h3 className="font-medium text-gray-900 mb-2">Looking for my resume?</h3>
+                <p className="text-sm text-gray-600 mb-4">Download my CV to learn more about my experience and skills.</p>
+                <a
+                  href="#"
+                  className="group inline-flex items-center gap-2 text-gray-900 font-medium hover:text-gray-700 transition-colors"
+                >
+                  <span>Download Resume</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
               </div>
 
-              <div className="pt-1">
-                <div className="flex">
-                  <a
-                    href="https://tinyurl.com/24fw857w"
-                    target="_blank"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                  <a
-                    href="https://github.com/skrillzofficial"
-                    target="_blank"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href="https://x.com/skrillzofficial?s=21"
-                    target="_blank"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
-                  >
-                    <X size={20} />
-                  </a>
-                  <a
-                    href="https://tinyurl.com/26ecctka"
-                    target="_blank"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-[#D3E97A] "
-                  >
-                    <Instagram size={20} />
-                  </a>
+              {/* Social Links */}
+              <div className="space-y-4">
+                <p className="text-sm font-medium text-gray-900">Follow my work</p>
+                <div className="flex gap-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-gray-100 border border-gray-200 text-gray-700 hover:bg-gray-200 hover:border-gray-300 transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -190,47 +213,51 @@ const Connect = () => {
           {/* Contact Form */}
           <div className="w-full lg:w-3/5">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block font mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full bg-gray-900 border ${
-                    errors.name ? "border-red-500" : "border-gray-800"
-                  } rounded-lg px-4 py-3 `}
-                />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${
+                      errors.name ? "border-red-500" : "border-gray-300"
+                    } px-4 py-3 transition-colors duration-300 focus:border-gray-900 focus:outline-none`}
+                    placeholder="Your full name"
+                  />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${
+                      errors.email ? "border-red-500" : "border-gray-300"
+                    } px-4 py-3 transition-colors duration-300 focus:border-gray-900 focus:outline-none`}
+                    placeholder="your.email@example.com"
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block font mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full bg-gray-900 border ${
-                    errors.email ? "border-red-500" : "border-gray-800"
-                  } rounded-lg px-4 py-3`}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block font mb-2">
-                  Subject
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-900 mb-2">
+                  Subject *
                 </label>
                 <input
                   type="text"
@@ -238,9 +265,10 @@ const Connect = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full bg-gray-900 border ${
-                    errors.subject ? "border-red-500" : "border-gray-800"
-                  } rounded-lg px-4 py-3 `}
+                  className={`w-full bg-white border ${
+                    errors.subject ? "border-red-500" : "border-gray-300"
+                  } px-4 py-3 transition-colors duration-300 focus:border-gray-900 focus:outline-none`}
+                  placeholder="What's this about?"
                 />
                 {errors.subject && (
                   <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
@@ -248,18 +276,19 @@ const Connect = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font mb-2">
-                  Message
+                <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
+                  Message *
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="5"
-                  className={`w-full bg-gray-900 border ${
-                    errors.message ? "border-red-500" : "border-gray-800"
-                  } rounded-lg px-4 py-3 `}
+                  rows="6"
+                  className={`w-full bg-white border ${
+                    errors.message ? "border-red-500" : "border-gray-300"
+                  } px-4 py-3 transition-colors duration-300 focus:border-gray-900 focus:outline-none resize-none`}
+                  placeholder="Tell me about your project..."
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -268,40 +297,44 @@ const Connect = () => {
 
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <div className="p-3 bg-green-900/30 border font border-green-800 rounded-lg text-green-300">
-                  Message sent successfully! I'll get back to you soon.
+                <div className="p-4 bg-green-50 border border-green-200 text-green-700">
+                  Message sent successfully! I'll get back to you within 24 hours.
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="p-3 bg-red-900/30 border border-red-800 font rounded-lg text-red-300">
-                  Sorry, there was an error sending your message. Please try
-                  again or email me directly.
+                <div className="p-4 bg-red-50 border border-red-200 text-red-700">
+                  Sorry, there was an error sending your message. Please try again or email me directly.
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#D3E97A] text-black font-semibold py-3 px-6 rounded-full flex items-center justify-center hover:bg-[#c5da70] transition-colors duration-300 cursor-pointer"
+                className="w-full bg-gray-900 text-white font-medium py-4 px-6 flex items-center justify-center hover:bg-gray-800 transition-all duration-300 border border-gray-900"
               >
                 {isSubmitting ? (
                   <>
                     <Loader size={18} className="animate-spin mr-2" />
-                    Sending...
+                    Sending Message...
                   </>
                 ) : (
                   <>
-                    SUBMIT
+                    Send Message
+                    <ArrowUpRight size={18} className="ml-2" />
                   </>
                 )}
               </button>
             </form>
           </div>
         </div>
-        <p className="pt-10 md:pt-0">
-          &copy; {new Date().getFullYear()} Obazee Felix
-        </p>
+
+        {/* Footer */}
+        <div className="mt-20 pt-8 border-t border-gray-200 text-center">
+          <p className="text-gray-600">
+            &copy; {new Date().getFullYear()} Obazee Felix. All rights reserved.
+          </p>
+        </div>
       </div>
     </section>
   );
