@@ -1,16 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { ExternalLink, Github, ArrowUpRight, Calendar, User, Building } from "lucide-react";
-import linkshort from "../assets/Link shortner.png";
 import sentient from "../assets/sentient.png";
 import BetaHouse from "../assets/Beta H.png";
 import Eventra from "../assets/Eventra.png";
+import Hive from "../assets/Hive hero section.png"
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
     {
-      id: 1,
+          id: 1,
+          title: "Hive",
+          subtitle: "Where Fashion Finds Its Thread",
+          description: "A modern e-commerce fashion platform delivering seamless shopping experiences with curated collections, intuitive product discovery, and secure checkout. Features responsive design, advanced filtering, wishlist management, and real-time inventory tracking.",
+          image: Hive,
+          tag: "Featured",
+          year: "2025",
+          role: "Full-stack Developer",
+          liveUrl: "https://www.hivethread.com/",
+          githubUrl: "",
+          tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
+          category: "E-commerce"
+        },
+    {
+      id: 2,
       title: "Eventra",
       subtitle: "Your event, our entry",
       description: "Eventra is the all-in-one event management platform that empowers you to seamlessly plan, organize, and execute any event, from large corporate conferences to deeply personal wedding celebrations.",
@@ -24,7 +38,7 @@ const Projects = () => {
       category: "Web Platform"
     },
     {
-      id: 2,
+      id: 3,
       title: "BetaHouse",
       subtitle: "Live like a local, not a tourist",
       description: "Solo-built Airbnb clone with secure JWT authentication, advanced property search, real-time booking system, integrated messaging, and comprehensive review functionality.",
@@ -38,7 +52,7 @@ const Projects = () => {
       category: "Marketplace"
     },
     {
-      id: 3,
+      id: 4,
       title: "Sentient",
       subtitle: "AI platform for agent battles",
       description: "Co-developed platform where AI meets survival. Collaborated on enabling users to create and watch AI agents battle with real-time spectator system and payment infrastructure.",

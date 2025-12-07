@@ -1,5 +1,5 @@
 import React from "react";
-import myimg from "../assets/My image .png";
+import myimg from "../assets/obazee.jpeg";
 import github from "../assets/bxl-github.svg.png";
 import linkedin from "../assets/bxl-linkedin.svg.png";
 import {

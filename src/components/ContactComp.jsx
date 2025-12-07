@@ -52,9 +52,9 @@ const ContactComp = () => {
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
-      href: "https://x.com/skrillzofficial",
+      href: "https://x.com/dr_codee?s=21",
       label: "Twitter",
-      handle: "@skrillzofficial",
+      handle: "@Dr_Codee",
     },
   ];
 
