@@ -5,6 +5,7 @@ import sentient from "../assets/sentient.png";
 import BetaHouse from "../assets/Beta H.png";
 import Eventra from "../assets/Eventra.png";
 import Inklune from "../assets/inklune.png";
+import Hive from "../assets/Hive hero section.png"
 
 const WorkComponent = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -12,6 +13,20 @@ const WorkComponent = () => {
   const projects = [
     {
       id: 1,
+      title: "Hive",
+      subtitle: "Where Fashion Finds Its Thread",
+      description: "A modern e-commerce fashion platform delivering seamless shopping experiences with curated collections, intuitive product discovery, and secure checkout. Features responsive design, advanced filtering, wishlist management, and real-time inventory tracking.",
+      image: Hive,
+      tag: "Featured",
+      year: "2025",
+      role: "Full-stack Developer",
+      liveUrl: "https://www.hivethread.com/",
+      githubUrl: "",
+      tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
+      category: "E-commerce"
+    },
+    {
+      id: 2,
       title: "Eventra",
       subtitle: "Transform Every Moment into a Masterpiece",
       description: "An all-in-one event management ecosystem that seamlessly orchestrates corporate conferences, intimate wedding celebrations, and everything in between. Built with advanced registration systems, real-time analytics, and intelligent resource allocation.",
@@ -25,7 +40,7 @@ const WorkComponent = () => {
       category: "Web Platform"
     },
     {
-      id: 2,
+      id: 3,
       title: "LinkSphere",
       subtitle: "Beyond URL Shortening",
       description: "A sophisticated link management platform engineered with performance analytics at its core. Features real-time click tracking, geographic insights, device analytics, and QR code generation.",
@@ -39,7 +54,7 @@ const WorkComponent = () => {
       category: "Analytics Tool"
     },
     {
-      id: 3,
+      id: 4,
       title: "BetaHouse",
       subtitle: "Live Like a Local, Not a Tourist",
       description: "A feature-rich vacation rental marketplace mirroring Airbnb's sophistication. Implements secure JWT authentication, advanced property search, real-time booking system, and integrated messaging.",
@@ -53,7 +68,7 @@ const WorkComponent = () => {
       category: "Marketplace"
     },
     {
-      id: 4,
+      id: 5,
       title: "EcoCommerce",
       subtitle: "Sustainable Shopping, Scalable Solutions",
       description: "Backend-focused e-commerce platform specializing in sustainable products. Architected with RESTful APIs, robust cart management, dynamic pricing engine, and cloud-based image optimization service.",
@@ -67,7 +82,7 @@ const WorkComponent = () => {
       category: "E-commerce"
     },
     {
-      id: 5,
+      id: 6,
       title: "Sentient Struggle",
       subtitle: "Where AI Meets Survival",
       description: "An innovative AI agent battle platform where users create, deploy, and spectate autonomous AI agents in competitive survival scenarios. Features real-time WebSocket-powered spectator system.",
@@ -81,7 +96,7 @@ const WorkComponent = () => {
       category: "AI Platform"
     },
     {
-      id: 6,
+      id: 7,
       title: "InkLune",
       subtitle: "Where Ideas Take Flight",
       description: "A modern blogging platform with rich text editing capabilities, markdown support, and social features. Built with full CRUD functionality, user authentication, and engagement analytics.",
