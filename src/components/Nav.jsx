@@ -3,8 +3,8 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
   { label: "Work", href: "/work" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Nav = () => {

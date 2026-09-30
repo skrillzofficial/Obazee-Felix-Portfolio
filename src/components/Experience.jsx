@@ -1,145 +1,127 @@
 import React from "react";
-import { Calendar, MapPin, ArrowUpRight, Code, Palette } from "lucide-react";
+import { Calendar, MapPin, Code, Users, Palette } from "lucide-react";
+
+const experiences = [
+  {
+    title: "Freelance Full-Stack Developer",
+    company: "Self-employed",
+    location: "Lagos, Nigeria · Remote",
+    period: "2025 – Present", 
+    type: "Freelance",
+    icon: Code,
+    highlights: [
+      "Build and ship full-stack web apps end to end, from API design to deployment",
+      "Delivered Hive (e-commerce), Eventra (event management) and BetaHouse (property rental)",
+      "Co-developed Sentient, a real-time AI agent battle platform with payments",
+    ],
+    skills: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"], 
+  },
+  {
+    title: "AI Training Lead",
+    company: "Alchemy AI Training (Co-lead)",
+    location: "Remote",
+    period: "2025 – Present", 
+    type: "Leadership",
+    icon: Users,
+    highlights: [
+      "Trained and supported communities of 3,000+ people for AI work",
+      "People trained have collectively earned $100K+",
+      "Platforms covered: Outlier/Scale AI, Mercor, Handshake and RWS",
+    ],
+    skills: ["Training & Mentoring", "Community Leadership", "AI Data Work"],
+  },
+  {
+    title: "Junior Front-End Developer",
+    company: "Innox Tech Nigeria",
+    location: "Ibadan, Nigeria",
+    period: "2019",
+    type: "Internship",
+    icon: Palette,
+    highlights: [
+      "Built responsive landing pages and websites for client businesses",
+      "Learnt the foundations of web development and client delivery",
+    ],
+    skills: ["HTML", "CSS", "JavaScript", "jQuery"],
+  },
+];
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: "Fullstack Web Developer",
-      company: "TechStudio Academy",
-      location: "Lagos, Nigeria",
-      period: "2025 - Present",
-      description: "Developed full-stack applications for various clients, focusing on scalable solutions and user experience. Contributed to both frontend and backend development.",
-      type: "Full-time",
-      category: "Education & Development",
-      skills: ["React", "Node.js", "MongoDB", "TypeScript"]
-    },
-    {
-      title: "Junior Front-end Developer",
-      company: "Innox Tech Nigeria",
-      location: "Ibadan, Nigeria",
-      period: "2019 - 2019",
-      description: "Started my professional journey building landing page websites for various clients. Gained foundational knowledge in web technologies and best practices.",
-      type: "Internship",
-      category: "Professional Start",
-      skills: ["HTML", "CSS", "JavaScript", "jQuery"]
-    }
-  ];
-
   return (
-    <section className="py-20 bg-white text-gray-900 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-gray-50 rounded-full blur-3xl opacity-60"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gray-50 rounded-full blur-3xl opacity-40"></div>
-
+    <section className="py-20 bg-white text-gray-900 relative overflow-hidden" id="experience">
       <div className="w-11/12 container mx-auto relative z-10">
-        {/* Header Section */}
+        {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-full mb-6">
             <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
             <span className="text-sm font-medium tracking-wider">PROFESSIONAL JOURNEY</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
-            Work <span className="font-medium">Experience</span>
-          </h2>
+          <h2 className="text-4xl md:text-5xl tracking-wide mb-6">Work Experience</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            My path through the tech industry, from foundational frontend development 
-            to full-stack expertise and continuous learning.
+            Building for the web since 2019, from landing pages to full-stack products,
+            alongside leading AI training communities.
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="max-w-4xl mx-auto">
-          {/* Timeline Line */}
-          <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
-            
-            {experiences.map((exp, index) => (
-              <div key={index} className="flex relative mb-12 last:mb-0 group">
-                {/* Timeline Dot */}
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center z-10 group-hover:bg-gray-800 transition-colors duration-300">
-                  {index === 0 ? (
-                    <Code className="text-white w-6 h-6" />
-                  ) : (
-                    <Palette className="text-white w-6 h-6" />
-                  )}
+        {/* Timeline */}
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-200"></div>
+
+          {experiences.map((exp) => {
+            const Icon = exp.icon;
+            return (
+              <div key={exp.title} className="flex relative mb-12 last:mb-0 group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center z-10">
+                  <Icon className="text-white w-5 h-5" />
                 </div>
 
-                {/* Content */}
-                <div className="ml-8 flex-1">
-                  <div className="bg-gray-50 border border-gray-200 p-8 group-hover:border-gray-300 transition-all duration-300">
-                    {/* Header */}
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-4">
-                      <div>
-                        <h3 className="text-2xl font-medium text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
-                          {exp.title}
-                        </h3>
-                        <div className="flex items-center gap-4 text-gray-600 mb-3">
-                          <div className="flex items-center gap-2">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                            <span className="font-medium">{exp.company}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span className="text-sm">{exp.location}</span>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Period & Type */}
-                      <div className="flex flex-col items-start lg:items-end gap-2">
-                        <div className="flex items-center gap-2 text-gray-600">
-                          <Calendar className="w-4 h-4" />
-                          <span className="text-sm font-medium">{exp.period}</span>
-                        </div>
-                        <span className="px-3 py-1 bg-gray-200 text-gray-700 text-xs font-medium">
-                          {exp.type}
+                <div className="ml-6 md:ml-8 flex-1 bg-gray-50 border border-gray-200 p-6 md:p-8 group-hover:border-gray-400 transition-colors duration-300">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div>
+                      <h3 className="text-2xl md:text-3xl tracking-wide text-gray-900 mb-1">
+                        {exp.title}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-gray-600">
+                        <span className="font-medium">{exp.company}</span>
+                        <span className="flex items-center gap-1 text-sm">
+                          <MapPin className="w-4 h-4" />
+                          {exp.location}
                         </span>
                       </div>
                     </div>
-
-                    {/* Category */}
-                    <div className="mb-4">
-                      <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-medium border border-gray-200">
-                        {exp.category}
+                    <div className="flex md:flex-col items-center md:items-end gap-2">
+                      <span className="flex items-center gap-2 text-sm font-medium text-gray-600">
+                        <Calendar className="w-4 h-4" />
+                        {exp.period}
                       </span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {exp.description}
-                    </p>
-
-                    {/* Skills */}
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="px-3 py-1.5 bg-white text-gray-700 text-sm font-medium border border-gray-300 hover:border-gray-400 transition-colors"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                      <span className="px-3 py-1 bg-gray-200 text-gray-700 text-xs font-medium">
+                        {exp.type}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Connecting Line (except for last item) */}
-                  {index < experiences.length - 1 && (
-                    <div className="absolute -bottom-6 left-6 w-0.5 h-6 bg-gray-200"></div>
-                  )}
+                  <ul className="space-y-2 mb-6">
+                    {exp.highlights.map((point) => (
+                      <li key={point} className="flex gap-3 text-gray-600 leading-relaxed">
+                        <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-900"></span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1.5 bg-white text-gray-700 text-sm font-medium border border-gray-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Career Progress Note */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 px-6 py-4 bg-gray-50 border border-gray-200">
-            <div className="w-2 h-2 bg-gray-900 rounded-full animate-pulse"></div>
-            <p className="text-gray-600">
-              Continuously expanding skills and taking on new challenges in full-stack development
-            </p>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

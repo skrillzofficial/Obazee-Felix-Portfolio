@@ -9,7 +9,6 @@ const Contact = () => {
     <div>
         <Nav/>
         <ContactComp/>
-        <Connect/>
     </div>
   )
 }
