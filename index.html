@@ -71,12 +71,24 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Hide the SEO fallback from visitors; crawlers still read it -->
+    <style>
+      .seo-fallback {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+    </style>
   </head>
   <body>
     <!-- Fallback content: read by search engines, link previews and AI tools.
-         React replaces it as soon as the app loads. -->
+         Visually hidden, and React replaces it as soon as the app loads. -->
     <div id="root">
-      <main>
+      <main class="seo-fallback">
         <h1>Obazee Felix — Full-Stack Software Developer</h1>
         <p>Lagos, Nigeria</p>
 

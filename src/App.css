@@ -1,10 +1,32 @@
 @import "tailwindcss";
-*{
-  font-family: Bebas Neue;
+
+/* Font setup: Manrope for body text, Bebas Neue for headings */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Manrope", sans-serif;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* stops the sticky navbar covering section titles */
+  }
+
+  body {
+    @apply font-sans text-gray-900 antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-wide;
+    font-synthesis-weight: none; /* Bebas has one weight; stops browsers faking bold */
+  }
+}
+
 .disabled {
-        pointer-events: none;
-    }
-.font{
-  font-family: Manrope;
+  pointer-events: none;
+}
+
+/* Kept so any existing className="font" still works */
+.font {
+  @apply font-sans;
 }
